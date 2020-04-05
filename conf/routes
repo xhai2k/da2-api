@@ -16,6 +16,9 @@ POST            /api/user/update                                    AuthControll
 POST            /api/user/insert                                    AuthController.createUser
 DELETE          /api/user/delete                                    AuthController.deleteUser
 OPTIONS        /.*                                                  Application.options()
+# Post
+GET             /api/post/list                                      PostController.getAll
+GET             /api/post/{id}                                      PostController.getById
 # Home page
 #GET            /                                                   Application.index
 GET             /api/backup-file/list                               BackupFileController.getListFileByUser
