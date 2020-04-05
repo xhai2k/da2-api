@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+POST            /api/login                                          AuthController.login
+GET             /api/user/list                                      AuthController.getAllUser
+GET             /api/user/storage-all                               AuthController.getStorageAll
+GET             /api/user/{id}                                      AuthController.getUserById
+GET             /api/user/email/{email}                             AuthController.getUserByEmail
+GET             /api/user/token/{token}                             AuthController.getUserByToken
+POST            /api/user/update-password                           AuthController.changePasswordForUser
+POST            /api/user/change-password                           AuthController.changePasswordOfUser
+GET             /api/logout                                         AuthController.logout
+
+POST            /api/user/update                                    AuthController.updateUser
+POST            /api/user/insert                                    AuthController.createUser
+DELETE          /api/user/delete                                    AuthController.deleteUser
+OPTIONS        /.*                                                  Application.options()
+# Home page
+#GET            /                                                   Application.index
+GET             /api/backup-file/list                               BackupFileController.getListFileByUser
+POST            /api/backup-file/upload                             BackupFileController.upload
+GET             /api/backup-file/check/{id}                         BackupFileController.check
+GET             /api/backup-file/download/{id}                      BackupFileController.download
+DELETE          /api/backup-file/delete/{id}                        BackupFileController.delete
+
+POST            /api/backup-file-fail                               BackupFileController.sentMailIfBackupFail
+
+GET             /api/download-tool                                  ToolsController.download
+# Ignore favicon requests
+#GET            /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
